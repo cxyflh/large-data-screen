@@ -22,6 +22,7 @@ const errorHandler = error => {
         } = error.response;
         // 403 无权限
         if (status === 403) {
+            window.open('')
             notification.error({
                 message: 'Forbidden',
                 description: data && data.message || statusText,

@@ -1,6 +1,6 @@
 import request from "@/api/request.js";
-// const baseUrl = '/state-assets-monitor';
-const baseUrl = 'http://127.0.0.1:4523/m1/3704704-0-default';
+const baseUrl = '/state-assets-monitor';
+// const baseUrl = 'http://127.0.0.1:4523/m1/3704704-0-default';
 
 /** 采购监管月报数据 **/
 export const getProcurementSupervision = (params) => {
