@@ -117,7 +117,7 @@ onMounted(() => {
     flex: 6;
   }
   .lineThree-div2 {
-    //min-width: 330px;
+    min-width: 330px;
     flex: 1;
     height: 100%;
   }
