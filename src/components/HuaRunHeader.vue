@@ -36,26 +36,7 @@
     >
       <template #suffixIcon> <img src="../assets/icon/subtract.svg"/></template>
     </a-cascader>
-      <!-- <a-dropdown>
-      <template #overlay>
-        <a-menu>
-          <a-menu-item>1st menu item</a-menu-item>
-          <a-menu-item>2nd menu item</a-menu-item>
-          <a-sub-menu key="sub1" title="sub menu">
-            <a-menu-item>3rd menu item</a-menu-item>
-            <a-menu-item>4th menu item</a-menu-item>
-          </a-sub-menu>
-          <a-sub-menu key="sub2" title="disabled sub menu" disabled>
-            <a-menu-item>5d menu item</a-menu-item>
-            <a-menu-item>6th menu item</a-menu-item>
-          </a-sub-menu>
-        </a-menu>
-      </template>
-      <a-button class="button">
-          全集团
-          <img src="../assets/icon/subtract.svg"/>
-      </a-button>
-      </a-dropdown> -->
+
     </div>
   </div>
 </template>
