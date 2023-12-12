@@ -45,7 +45,7 @@
         <div class="demo">样例数据</div>
       </div>
       <div class="contentDiv">
-        <div class="content-title">专家评分</div>
+        <div class="content-title" @click="toExpertScore">专家评分</div>
         <enterpriseInformation />
         <div class="demo">样例数据</div>
       </div>
@@ -96,6 +96,12 @@
   const toThirdPartyReport = () => {
     router.push({
       path: '/third-party-report',
+      query: query.value
+    })
+  }
+  const toExpertScore= () => {
+    router.push({
+      path: '/expert-score',
       query: query.value
     })
   }

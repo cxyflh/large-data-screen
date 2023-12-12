@@ -1,0 +1,29 @@
+<script setup>
+
+</script>
+
+<template>
+ <div class="report-main">
+   <div class="demo">样例数据</div>
+ </div>
+</template>
+
+<style scoped lang="less">
+.report-main {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-image: url("../assets/icon/score.png");
+  position: relative;
+}
+.demo {
+  position: absolute;
+  font-weight: bold;
+  font-size: 50px;
+  color: #cdcacae6;
+  transform: rotate(-45deg);
+  top: 40%;
+  left: 38%;
+  letter-spacing: 75px;
+}
+</style>
