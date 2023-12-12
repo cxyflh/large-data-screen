@@ -28,6 +28,7 @@ const props = defineProps({
 })
 
 const {decisionList} = toRefs(props)
+const decisionData = ref()
 const listTitle = ref(['企业名称','决策制度','事项清单','决策会议','决策议题','组织实施','决策异常']);
 const empty = {
     companyName: '-',
@@ -38,20 +39,20 @@ const empty = {
     implement: '-',
     decisionException: '-',
 };
-const decisionData = computed(() => {
+
+const initList = () => {
   let result = decisionList.value;
-  if(result.length < 7){
-    for(let i = 0; i < 7 - result.length + 1; i++){
+  const length = result.length;
+  if(length < 7){
+    for(let i = 0; i < 7 - length; i++){
       result.push(empty);
     }
   }
-  return result;
+  decisionData.value = result;
+};
+onMounted(() => {
+  initList();
 });
-// const initList = () => {
-
-// };
-// onMounted(() => {
-// });
 </script>
 
 <style scoped lang="less">

@@ -5,7 +5,7 @@
       <span class="tag">是否需要上报</span>
     </div>
     <div class="list-main">
-      <div class="list-item item-height" v-for="(item, index) in unreportedList" :key="index">
+      <div class="list-item item-height" v-for="(item, index) in unReportData" :key="index">
         <span class="tag">{{ item.companyName }}</span>
         <span class="tag" v-if="item.needReport === 0">否</span>
         <span class="tag" v-else-if="item.needReport === 1">是</span>
@@ -25,23 +25,24 @@ const prop = defineProps({
   }
 })
 const { unReportList } = toRefs(prop)
+const unReportData = ref();
 const empty = {
   companyName: '-',
   needReport: -1,
 }
-const unreportedList = computed(() => {
+const initList = () => {
   let result = unReportList.value;
-  if(result.length < 11){
-    for(let i = 0; i < 11 - result.length + 1; i++){
+  const length = result.length;
+  if(length < 11){
+    for(let i = 0; i < 11 - length; i++){
       result.push(empty);
     }
   }
-  return result;
-})
-// const initList = () => {
-// };
-// onMounted(() => {
-// });
+  unReportData.value = result;
+};
+onMounted(() => {
+  initList();
+});
 </script>
 
 <style scoped lang="less">

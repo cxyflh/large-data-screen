@@ -29,9 +29,11 @@ const xAxis = ref([]);
 onMounted(() => {
   echartsList.value[0].data = reportData.value.meetingList;
   echartsList.value[1].data = reportData.value.exceptionList;
-  console.log(reportData.value)
   xAxis.value = reportData.value.xAxis;
   option.value.xAxis[0].data = xAxis.value;
+  option.value.series[0].data = echartsList.value[0].data;
+  option.value.series[1].data = echartsList.value[1].data;
+  // console.log(reportData.value,option.value)
   initEcharts();
 });
 
@@ -108,14 +110,14 @@ const option = ref({
       type: 'bar',
       tooltip: {},
       barMaxWidth: 20,
-      data: echartsList.value[0].data,
+      data: [],
     },
     {
       name: '异常',
       type: 'line',
       tooltip: {},
       color: '#DA0000',
-      data: echartsList.value[1].data,
+      data: [],
     }
   ]
 })
