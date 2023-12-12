@@ -67,9 +67,9 @@
   const $router = useRouter();
 
   const month = new Date().getMonth() + 1;
-  const decisionMeeting = ref(100);
-  const decisionException = ref(50);
-  const rectificationRate = ref(10);
+  const decisionMeeting = ref();
+  const decisionException = ref();
+  const rectificationRate = ref();
   
   const renderKey = ref();
   const sectionVo = ref();
