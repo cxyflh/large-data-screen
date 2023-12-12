@@ -64,7 +64,6 @@ const totalInfo = reactive({
 });
 const loadStatus = ref(false);
 const initEcharts = () => {
-  console.log('reportData.value', reportData.value)
   if (reportData.value.length) {
     let list = [];
     let valueData = [];
@@ -86,6 +85,17 @@ const initEcharts = () => {
     option.value.radar.indicator = list;
     option.value.series[0].data[0].value = valueData;
     questionList.value = reportData.value;
+    let num = 8 - questionList.value.length;
+    if (num > 0) {
+      for (let i = 0; i < num; i++) {
+        questionList.value.push({
+          content: '-',
+          count: '-',
+          haveCorrected: '-',
+          unCorrected: '-',
+        })
+      }
+    }
     loadStatus.value = true;
     const myChart = echarts.init(echartsDom.value, "default");
     option.value && myChart.setOption(option.value);
@@ -204,7 +214,7 @@ const initEcharts = () => {
   }
 }
 .list-main {
-  height: 180px;
+  height: 190px;
   overflow-y: auto;
   .tag {
     overflow: hidden;

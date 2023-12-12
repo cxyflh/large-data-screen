@@ -15,7 +15,7 @@ const props = defineProps({
 const { reportData } = toRefs(props);
 const echartsList = ref([
   {
-    label: '告警',
+    label: '警告',
     value: 'warn',
     data: [],
   },
@@ -55,7 +55,7 @@ const option = ref({
   },
   legend: {
     show: false,
-    data: ['告警', '不通过', '待整改']
+    data: ['警告', '不通过', '待整改']
   },
   xAxis: [
     {
@@ -110,7 +110,7 @@ const option = ref({
   ],
   series: [
     {
-      name: '告警',
+      name: '警告',
       type: 'bar',
       tooltip: {},
       // smooth: 20,
