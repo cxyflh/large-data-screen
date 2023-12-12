@@ -1,12 +1,12 @@
 <template>
   <div class="wh-100 p-all-20 container">
     <cardTitle title="大额资金使用"/>
-    <a-row v-for="(item,index) in fundList" :key="index" style="flex-grow: 0.33;padding-top: 20px;">
-      <a-col :span="16">
+    <a-row v-for="(item,index) in fundList" :key="index" style="flex: 1;padding-top: 20px;">
+      <a-col :span="15">
         <span class="content-css">{{ item.title }}</span>
       </a-col>
-      <a-col :span="8">
-        <span class="title-css">{{ item.data }}</span>
+      <a-col :span="9">
+        <span class="title-css" style="float: right;">{{ item.data }}</span>
       </a-col>
     </a-row>
   </div>
@@ -54,8 +54,8 @@ const list = [
 ]
 const initFundList = () => {
   fundList.value = list;
-  let data1 = Math.round(Object.values(largeFunds.value)[0] / 100000000)
-  let data2 = Math.round(Object.values(largeFunds.value)[1] / 100000000)
+  let data1 = (Object.values(largeFunds.value)[0] / 100000000).toFixed(1)
+  let data2 = (Object.values(largeFunds.value)[1] / 100000000).toFixed(1)
   let data3 = Object.values(largeFunds.value)[2]
   fundList.value[0].data = typeof Object.values(largeFunds.value)[0] === 'number' ? data1 + '亿元' : '--'
   fundList.value[1].data = typeof Object.values(largeFunds.value)[1] === 'number' ? data2 + '亿元' : '--'

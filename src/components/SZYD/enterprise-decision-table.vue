@@ -4,7 +4,7 @@
       <span v-for="(item,index) in listTitle" :class="index === 0?'tag':'tag-num'" :key="index">{{ item }}</span>
     </div>
     <div class="list-main">
-      <div class="list-item" v-for="(item, index) in decisionList" :key="index">
+      <div class="list-item" v-for="(item, index) in decisionData" :key="index">
         <span class="tag">{{ item.companyName }}</span>
         <span class="tag-num">{{ item.decisionSystem }}</span>
         <span class="tag-num">{{ item.item }}</span>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, toRefs } from 'vue'
+import { ref, onMounted, toRefs, computed } from 'vue'
 
 const props = defineProps({
   decisionList: {
@@ -29,115 +29,29 @@ const props = defineProps({
 
 const {decisionList} = toRefs(props)
 const listTitle = ref(['企业名称','决策制度','事项清单','决策会议','决策议题','组织实施','决策异常']);
-// const decisionList = ref([
-//   {
-//     companyName: '',
-//     decisionSystem: 0,
-//     item: 0,
-//     decisionMeeting: 0,
-//     decisionSubject: 0,
-//     implement: 0,
-//     decisionException: 0
-//   }
-// ]);
-const resData = [
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-  {
-    companyName: 'HUARUN',
-    decisionSystem: 10,
-    item: 20,
-    decisionMeeting: 30,
-    decisionSubject: 40,
-    implement: 50,
-    decisionException: 60,
-  },
-];
-const initList = () => {
-  decisionList.value = resData;
+const empty = {
+    companyName: '-',
+    decisionSystem: '-',
+    item: '-',
+    decisionMeeting: '-',
+    decisionSubject: '-',
+    implement: '-',
+    decisionException: '-',
 };
-onMounted(() => {
-  //initList();
+const decisionData = computed(() => {
+  let result = decisionList.value;
+  if(result.length < 7){
+    for(let i = 0; i < 7 - result.length + 1; i++){
+      result.push(empty);
+    }
+  }
+  return result;
 });
+// const initList = () => {
+
+// };
+// onMounted(() => {
+// });
 </script>
 
 <style scoped lang="less">
@@ -162,7 +76,7 @@ onMounted(() => {
     text-align: left;
   }
   .tag-num {
-    text-align: right;
+    text-align: center;
     width: calc(80% / 6);
   }
 }

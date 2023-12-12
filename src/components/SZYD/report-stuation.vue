@@ -68,7 +68,6 @@ const option = ref({
   xAxis: [
     {
       type: 'category',
-      name: '',
       data: xAxis.value,
       axisTick: false,
       axisPointer: {

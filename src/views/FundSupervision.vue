@@ -1,20 +1,18 @@
 <template>
   <div class="picturePosition">
-    <picture1 class="icon" />
-    <picture2 class="icon" />
-    <picture3 class="icon" />
+    <img src="../components/icons/ThirdParty/picture1.svg" alt="" >
+    <img src="../components/icons/ThirdParty/picture2.svg" alt="" >
+    <img src="../components/icons/ThirdParty/picture3.svg" alt="" >
+    <img src="../components/icons/ThirdParty/picture4.svg" alt="" >
   </div>
 </template>
 
 <script setup>
-  import picture1 from '@/components/icons/FundSupervision/PictureOne.vue'
-  import picture2 from '@/components/icons/FundSupervision/PictureTwo.vue'
-  import picture3 from '@/components/icons/FundSupervision/PictureThree.vue'
 </script>
 
 <style lang="less" scoped>
 .picturePosition {
-  .icon {
+  img {
     margin-bottom: 16px;
   }
 }

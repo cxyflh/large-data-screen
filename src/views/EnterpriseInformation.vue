@@ -1,9 +1,9 @@
 <template>
   <div class="picturePosition">
-    <img src="../components/icons/EnterpriseInformation/picture1.png" alt="" >
-    <img src="../components/icons/EnterpriseInformation/picture2.png" alt="" >
-    <img src="../components/icons/EnterpriseInformation/picture3.png" alt="" >
-    <img src="../components/icons/EnterpriseInformation/picture4.png" alt="" >
+    <img src="../components/icons/EnterpriseInformation/picture1.svg" alt="" >
+    <img src="../components/icons/EnterpriseInformation/picture2.svg" alt="" >
+    <img src="../components/icons/EnterpriseInformation/picture3.svg" alt="" >
+    <img src="../components/icons/EnterpriseInformation/picture4.svg" alt="" >
   </div>
 </template>
 
