@@ -33,14 +33,14 @@
 // ]);
   const option = ref({
     xAxis: {
-      type: 'category',
+      //type: 'category',
       data: [],
       axisTick: false,
       axisLabel: {
-        // interval: 0,
-        // formatter:function(value){
-        //       return value.split('').join('\n')
-        // }
+        interval: 0,
+        formatter:function(value){
+              return value.split('').join('\n')
+        }
       }
     },
     tooltip: {
@@ -61,11 +61,11 @@
 ]
   });
   const handleData = (data) => {
-  if(data.xaxis?.length > 0 && data.yaxis?.length > 0){
-    option.value.xAxis.data = data.xaxis;
-    option.value.series[0].data = data.yaxis;;
+    if(data.xaxis?.length > 0 && data.yaxis?.length > 0){
+      option.value.xAxis.data = data.xaxis;
+      option.value.series[0].data = data.yaxis;
+    }
   }
-}
   const handleSeries = (series) => {
     for(let i = 0; i < series[0].data.length; i++) {
       series[0].data[i] = {
@@ -80,7 +80,7 @@
   const initEcharts = () => {
     var myChart = echarts.init(echartsDom.value, 'default');
     handleData(reportData.value);
-    handleSeries(option.value.series)
+    handleSeries(option.value.series);
     option.value && myChart.setOption(option.value);
   };
 

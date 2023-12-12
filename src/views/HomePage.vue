@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="contentDiv">
-        <div class="content-title">大额资金监管</div>
+        <div class="content-title" @click="toThirdPartyReport">聘用第三方服务机构</div>
         <fundSupervision />
       </div>
       <div class="contentDiv">
@@ -149,7 +149,7 @@
       font-family: Source Han Sans CN;
       font-size: 26px;
       font-weight: 900;
-      color: #16408f;  
+      color: #1B2A52;  
       line-height: 78px;
     }
     .content-main {
