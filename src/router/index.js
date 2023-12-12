@@ -26,6 +26,11 @@ export const routes = [
     path: '/third-party-report',
     component: () => import( /* webpackChunkName: "thirdPartyReport" */'@/views/ThirdPartyReport.vue'),
   },
+  {
+    name: 'expert-score',
+    path: '/expert-score',
+    component: () => import( /* webpackChunkName: "thirdPartyReport" */'@/views/ExpertScore.vue'),
+  },
 ];
 const router = createRouter({
     history: createWebHistory(import.meta.env.VITE_BASE_PATH),
