@@ -25,6 +25,7 @@ onMounted(() => {
 const procurementSupervisionData = ref({});
 const renderKey = ref();
 const dataInit = (params) => {
+  params.ldap = router.currentRoute.value.query.ldap
   getProcurementSupervision(params).then(res => {
     if (res.code === 200) {
       console.log('res.data', res.data)

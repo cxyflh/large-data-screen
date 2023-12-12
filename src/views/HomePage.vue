@@ -37,14 +37,17 @@
             <img src="../assets/icon/home-szyd3.svg" style="padding-right: 20px;"/>
           </div>
         </div>
+        <div class="demo">样例数据</div>
       </div>
       <div class="contentDiv">
         <div class="content-title" @click="toThirdPartyReport">聘用第三方服务机构</div>
         <fundSupervision />
+        <div class="demo">样例数据</div>
       </div>
       <div class="contentDiv">
         <div class="content-title">专家评分</div>
         <enterpriseInformation />
+        <div class="demo">样例数据</div>
       </div>
     </div>
   </div>
@@ -75,6 +78,7 @@
   const cumulativeContractAmount = ref(0);
   const query = ref({
     buCode: $router.currentRoute.value.query.buCode || 'CR000',
+    ldap: $router.currentRoute.value.query.ldap
   })
 
   const pushSupervision = () => {
@@ -100,6 +104,7 @@
     query.value.buCode = code
   }
   const getHomeDomainData = (params) => {
+    params.ldap = $router.currentRoute.value.query.ldap
     getHomeDomain(params).then(res => {
       console.log(res,'res')
       if(res.code === 200){
@@ -131,6 +136,7 @@
   }
   .contentDiv {
     //min-width: 125px;
+    position: relative;
     width: 425px;
     // height: 100%;
     flex:1;
@@ -172,5 +178,14 @@
  }
  .bottom-span {
     font-size: 24px;
+ }
+ .demo {
+   position: absolute;
+   font-weight: bold;
+   font-size: 50px;
+   color: #cdcacae6;
+   transform: rotate(-62deg);
+   top: 50%;
+   letter-spacing: 42px;
  }
 </style>

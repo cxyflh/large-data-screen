@@ -13,6 +13,7 @@
         <div class="div-border lineThree-div2"><largeFundUsage :largeFunds="largeFunds" :month="month"/></div>
       </div>
     </div>
+      <div class="demo">样例数据</div>
   </div>
 </template>
 
@@ -122,5 +123,15 @@ onMounted(() => {
     flex: 1;
     height: 100%;
   }
+}
+.demo {
+  position: absolute;
+  font-weight: bold;
+  font-size: 50px;
+  color: #cdcacae6;
+  transform: rotate(-45deg);
+  top: 40%;
+  left: 38%;
+  letter-spacing: 75px;
 }
 </style>

@@ -16,6 +16,7 @@
           <img src="../assets/icon/subtract.svg"/>
       </a-button>
       </a-dropdown> -->
+      <a-button class="button" @click="router.push('/')" v-if="detailMonth">校验平台</a-button>
       <a-button class="button" @click="router.push('/')" v-if="detailMonth">返回</a-button>
       <a-select v-if="detailMonth"
         v-model:value="params.monthValue"
@@ -96,7 +97,7 @@
   });
   const buName = ref();
   const getBuListData = () => {
-    getBuList({buCode: params.value.buValue[0]}).then(res => {
+    getBuList({buCode: params.value.buValue[0], ldap: query.ldap}).then(res => {
       if(res.code === 200){
         if(res.data == null){
           buShow.value = false;
@@ -195,5 +196,8 @@
   }
   :deep(.ant-select-selection-item) {
     line-height: 45px !important;
+  }
+  :deep(:where(.css-dev-only-do-not-override-1qb1s0s).ant-btn-default:not(:disabled)) {
+    border: none !important;
   }
 </style>
