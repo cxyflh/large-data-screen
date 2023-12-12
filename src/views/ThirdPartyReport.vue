@@ -16,6 +16,13 @@
   background-image: url("../assets/icon/report.png");
   position: relative;
 }
+@media screen and (width < 1920px) {
+  .report-main {
+    width: 1920px;
+    height: 1080px;
+    overflow: scroll;
+  }
+}
 .demo {
   position: absolute;
   font-weight: bold;

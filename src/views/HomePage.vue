@@ -128,6 +128,13 @@
 </script>
 
 <style scoped lang="less">
+@media screen and (width < 1920px) {
+  .largeScreenContainer {
+    width: 1920px;
+    //height: 1080px;
+    overflow: scroll;
+  }
+}
   .main-content {
     flex-grow: 1;
     padding: 20px 40px;

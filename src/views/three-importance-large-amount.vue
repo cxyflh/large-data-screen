@@ -90,6 +90,14 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
+@media screen and (width < 1920px) {
+  .largeScreenContainer {
+    width: 1920px;
+    //height: 1080px;
+    overflow: scroll;
+    padding-bottom: 20px;
+  }
+}
   .lineTwo {
     width: 100%;
     height: 435px;
