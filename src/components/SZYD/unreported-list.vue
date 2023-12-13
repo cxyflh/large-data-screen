@@ -7,9 +7,8 @@
     <div class="list-main">
       <div class="list-item item-height" v-for="(item, index) in unReportData" :key="index">
         <span class="tag">{{ item.companyName }}</span>
-        <span class="tag" v-if="item.needReport === 0">否</span>
-        <span class="tag" v-else-if="item.needReport === 1">是</span>
-        <span class="tag" v-else>-</span>
+        <span class="tag" v-if="item.needReport === 1">是</span>
+        <span class="tag" v-else></span>
       </div>
     </div>
   </div>

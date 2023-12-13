@@ -40,15 +40,15 @@ const resData = {
 }
 const list = [
   {
-    title: `${month.value}月资金总额`,
+    title: `${month.value}资金总额`,
     data: `${resData.fundsAmount}亿元`,
   },
   {
-    title: `${month.value}月大额资金总额`,
+    title: `${month.value}大额资金总额`,
     data: `${resData.largeFundsAmount}亿元`,
   },
   {
-    title: `${month.value}月支付大额资金总额`,
+    title: `${month.value}支付大额资金总额`,
     data: `${resData.payLargeFundsAmount}笔`,
   }
 ]
