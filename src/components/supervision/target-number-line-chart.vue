@@ -81,6 +81,9 @@ const initEcharts = () => {
   var myChart = echarts.init(echartsDom.value, 'default');
   handleData(reportData.value);
   option.value && myChart.setOption(option.value);
+  window.addEventListener('resize', function () {
+    myChart.resize();
+  })
 };
 onMounted(() => {
   year.value = new Date().getFullYear();
