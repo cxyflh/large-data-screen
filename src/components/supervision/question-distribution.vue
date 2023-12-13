@@ -104,6 +104,14 @@ const initEcharts = () => {
     })
     option.value && myChart.setOption(option.value);
   } else {
+    for (let i = 0; i < 7; i++) {
+      questionList.value.push({
+        content: '-',
+        count: '-',
+        haveCorrected: '-',
+        unCorrected: '-',
+      })
+    }
     loadStatus.value = false;
   }
 };
