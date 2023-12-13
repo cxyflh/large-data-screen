@@ -98,6 +98,9 @@ const initEcharts = () => {
     }
     loadStatus.value = true;
     const myChart = echarts.init(echartsDom.value, "default");
+    window.addEventListener('resize', function () {
+      myChart.resize();
+    })
     option.value && myChart.setOption(option.value);
   } else {
     loadStatus.value = false;

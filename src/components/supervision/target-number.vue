@@ -160,6 +160,9 @@ const initEcharts = () => {
       })
     })
   }
+  window.addEventListener('resize', function () {
+    myChart.resize();
+  })
   option.value && myChart.setOption(option.value);
 };
 </script>

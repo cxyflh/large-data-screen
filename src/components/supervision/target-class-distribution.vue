@@ -76,6 +76,9 @@ const initLeftEcharts = () => {
     })
   }
   var myChart = echarts.init(treeMapLeftDom.value, 'default');
+  window.addEventListener('resize', function () {
+    myChart.resize();
+  })
   leftOption.value && myChart.setOption(leftOption.value);
 };
 
@@ -139,6 +142,9 @@ const initRightEcharts = () => {
     })
   }
   var myChart = echarts.init(treeMapRightDom.value, 'default');
+  window.addEventListener('resize', function () {
+    myChart.resize();
+  })
   rightOption.value && myChart.setOption(rightOption.value);
 };
 </script>

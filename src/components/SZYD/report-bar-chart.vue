@@ -81,6 +81,9 @@
     var myChart = echarts.init(echartsDom.value, 'default');
     handleData(reportData.value);
     handleSeries(option.value.series);
+    window.addEventListener('resize', function () {
+      myChart.resize();
+    })
     option.value && myChart.setOption(option.value);
   };
 
