@@ -31,7 +31,7 @@
           </div>
           <div class="home-rectangle">
             <div>
-              <span class="content-css top-span">{{ month }}月整改率</span>
+              <span class="title-css top-span">{{ month }}月整改率</span>
               <span class="title-css block bottom-span">{{ rectificationRate }}%</span>
             </div>
             <img src="../assets/icon/home-szyd3.svg" style="padding-right: 20px;"/>
