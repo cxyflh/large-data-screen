@@ -42,13 +42,14 @@ const getMonth = (monthValue) => {
 }
 const title = '基本信息：'
 const content = ref('华润集团国资监管创新应用平台，汇聚全集团采购全链路业务数据，应用OCR、NLP等技术，对上报数据进行规则校验，实现了采购过程合规、招采问题线索发现、采购监管画像等场景的智能应用，集团全级次覆盖。同时，赋能了采购业务域合规性的提升，引领了采购业务域向智能化迈进。')
+const frequency = ref('按月上报')
 </script>
 
 <template>
   <div class="largeScreenContainer">
     <huarun-header title="采购监管月报" :detailMonth="true" @getData="dataInit" :monthEntityList="monthEntityList" @getMonth="getMonth"/>
     <div :key="renderKey" class="column-flex">
-      <mainHeader :title="title" :content="content" />
+      <mainHeader :title="title" :content="content" :frequency="frequency"/>
       <div class="row-flex lineTwo">
         <div class="div-border lineTwo-div">
           <sectionReport :sectionVo="procurementSupervisionData.sectionVo" :month="month" style="padding-top: 40px" />
@@ -86,7 +87,7 @@ const content = ref('华润集团国资监管创新应用平台，汇聚全集�
   .largeScreenContainer {
     width: 1920px;
     min-height: 1080px;
-    overflow: scroll;
+    //overflow: scroll;
   }
 }
 .main-content {

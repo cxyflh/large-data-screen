@@ -20,7 +20,7 @@
   .report-main {
     width: 1920px;
     min-height: 1080px;
-    overflow: scroll;
+    // overflow: scroll;
   }
 }
 .demo {

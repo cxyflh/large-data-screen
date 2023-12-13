@@ -2,7 +2,7 @@
     <div class="largeScreenContainer">
     <huarun-header title="三重一大月报" :detailMonth="true" @getData="getSZYDData" :monthEntityList="monthEntityList" @getMonth="getMonth"/>
     <div :key="renderKey" class="column-flex">
-      <main-header :title="headerTitle" :content="content" />
+      <main-header :title="headerTitle" :content="content" :frequency="frequency"/>
       <div class="row-flex lineTwo">
         <div class="div-border lineTwo-div1"><decisionMeeting :decisionMeetingData="decisionMeetingData"/></div>
         <div class="div-border lineTwo-div2"><reportStuation :reportData="szydLineEcharts" :month="month"/></div>
@@ -77,6 +77,7 @@ const getMonth = (monthValue) => {
 }
 const headerTitle = ref('基本信息：')
 const content = ref('为进一步贯彻落实中共中央关于凡属重大决策、重要人事任免、重大项目安排和大额度资金运作（以下简称“三重一大”）事项必须由领导班子集体研究做出决定的要求，防范决策风险，推动企业科学发展')
+const frequency = ref('实时上报');
 onMounted(() => {
   let query = router.currentRoute.value.query;
   const params = {
@@ -94,7 +95,8 @@ onMounted(() => {
   .largeScreenContainer {
     width: 1920px;
     min-height: 1080px;
-    overflow: scroll;
+    // overflow: scroll;
+    // padding-bottom: 20px;
   }
 }
 .largeScreenContainer {

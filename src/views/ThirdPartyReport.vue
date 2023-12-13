@@ -11,7 +11,7 @@
 <style scoped lang="less">
 .report-main {
   width: 100%;
-  height: 1080px;
+  min-height: 1080px;
   background-size: 100% 100%;
   background-image: url("../assets/icon/report.png");
   position: relative;
@@ -20,7 +20,7 @@
   .report-main {
     width: 1920px;
     height: 1080px;
-    overflow: scroll;
+    // overflow: scroll;
   }
 }
 .demo {
