@@ -36,6 +36,7 @@
         class="button"
         @change="onChange"
         :allowClear="false"
+        :disabled="true"
     >
       <template #suffixIcon> <img src="../assets/icon/subtract.svg"/></template>
     </a-cascader>
@@ -82,12 +83,7 @@
   const buOptions = ref([]);
   const monthOptions = computed(() => {
     const list = props.monthEntityList.map(item => {
-      let label = ''
-      if (Number(item.month) < 10) {
-        label = '0' + item.month + '月'
-      } else {
-        label = item.month + '月'
-      }
+      let label = item.month + '月'
       return {
         label,
         value: item.month,

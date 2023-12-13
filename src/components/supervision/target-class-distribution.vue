@@ -22,7 +22,9 @@ const leftOption = ref({
     x2: 0,
     y2: 0
   },
-  tooltip: {},
+  tooltip: {
+    formatter: '招标{b}'
+  },
   series: [
     {
       type: "treemap",
@@ -89,7 +91,9 @@ const rightOption = ref({
     x2: 0,
     y2: 0
   },
-  tooltip: {},
+  tooltip: {
+    formatter: '非招{b}'
+  },
   series: [
     {
       type: "treemap",

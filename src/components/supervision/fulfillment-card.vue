@@ -28,9 +28,10 @@ const reportInfo = reactive({
 const initData = () => {
   Object.keys(props.reportData).forEach(key => {
     if (props.reportData[key] !== undefined) {
-      reportInfo[key] = Math.round(props.reportData[key] / 10000) + '万'
+      reportInfo[key] = (props.reportData[key] / 100000000).toFixed(1) + '亿'
+    } else {
+      reportInfo[key] = '0亿'
     }
-
   })
 }
 </script>

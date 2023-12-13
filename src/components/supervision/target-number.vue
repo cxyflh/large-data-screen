@@ -47,7 +47,7 @@ const option = ref({
   tooltip: {
     trigger: 'axis',
     axisPointer: {
-      type: 'cross',
+      type: 'shadow',
       crossStyle: {
         color: '#999'
       }

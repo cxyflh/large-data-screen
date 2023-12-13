@@ -84,7 +84,7 @@ const initEcharts = () => {
     let unCorrectedTotal = 0
     reportData.value.map(item => {
       list.push(item.content);
-      valueData.push(item.haveCorrected);
+      valueData.push(item.count);
       total += item.count;
       unCorrectedTotal += item.unCorrected;
       haveCorrectedTotal += item.haveCorrected;

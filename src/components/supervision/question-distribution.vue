@@ -30,6 +30,7 @@ const option = ref({
       { name: "附件损坏", max: 25000 },
     ],
   },
+  tooltip: {},
   series: [
     {
       name: "",
@@ -75,7 +76,7 @@ const initEcharts = () => {
         max: item.count,
         name: item.content,
       });
-      valueData.push(item.haveCorrected);
+      valueData.push(item.count);
       total += item.count;
       unCorrectedTotal += item.unCorrected;
       haveCorrectedTotal += item.haveCorrected;
