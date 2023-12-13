@@ -132,7 +132,7 @@
   })
 
   const toPlatform = () => {
-    window.location.href = 'https://crasys.crdigital.com.cn/#/home?fromBigScree=Y'
+    window.location.href = import.meta.env.VITE_PLATFORM_BASE_URL
   }
   const back = () => {
     router.push({

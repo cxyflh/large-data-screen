@@ -23,7 +23,7 @@ const errorHandler = error => {
         // 403 无权限
         if (status === 403) {
           setTimeout(() => {
-            window.location.href = 'https://crasys.crdigital.com.cn/#/home?fromBigScree=Y'
+            window.location.href = import.meta.env.VITE_PLATFORM_BASE_URL;
           }, 500)
         }
         // 401 未登录/未授权
