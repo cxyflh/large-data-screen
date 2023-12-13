@@ -24,6 +24,7 @@
         placeholder="月份"
         class="button"
         @change="onChange"
+        :allowClear="false"
     >
       <template #suffixIcon> <img src="../assets/icon/subtract.svg"/></template>
     </a-select>
@@ -34,6 +35,7 @@
         placeholder="全集团"
         class="button"
         @change="onChange"
+        :allowClear="false"
     >
       <template #suffixIcon> <img src="../assets/icon/subtract.svg"/></template>
     </a-cascader>
