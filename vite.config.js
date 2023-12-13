@@ -11,7 +11,7 @@ export default defineConfig({
     // port: '5173',
     proxy: {
       '/state-assets-monitor': {
-        target: 'http://sassp-service-v2.cras-uat.crc.com.cn',
+        target: 'http://sassp-service-v2.cras.crc.com.cn',
         changeOrigin: true,
         pathRewrite: {
           "^/state-assets-monitor": "/"
