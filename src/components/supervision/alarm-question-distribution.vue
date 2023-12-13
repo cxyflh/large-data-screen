@@ -134,6 +134,10 @@ const initEcharts = () => {
     <div class="main-content">
       <div class="main-left echarts-top">
         <div ref="echartsDom" style="width: 100%; height: 100%"></div>
+<!--        <div ref="echartsDom" v-show="reportData.length" style="width: 100%; height: 100%"></div>-->
+<!--        <div class="no-data" v-if="!reportData.length">-->
+<!--          暂无数据-->
+<!--        </div>-->
       </div>
       <div class="main-right">
         <div class="total">
@@ -257,5 +261,15 @@ const initEcharts = () => {
   .list-item:nth-child(2n+1) {
   background-color: #F99C341A;
 }
+}
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #282828;
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
 }
 </style>

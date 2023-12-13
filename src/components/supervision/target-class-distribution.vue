@@ -162,9 +162,12 @@ const initRightEcharts = () => {
       <div class="top-left">招标</div>
       <div class="top-right">非招</div>
     </div>
-    <div class="main-content">
+    <div v-show="reportData.length" class="main-content">
       <div ref="treeMapLeftDom" style="width: 55%; height: 248px"></div>
       <div ref="treeMapRightDom" class="right-echarts" style="flex: 1; height: 248px"></div>
+    </div>
+    <div class="no-data" v-if="!reportData.length">
+      暂无数据
     </div>
   </div>
 </template>
@@ -201,5 +204,15 @@ const initRightEcharts = () => {
 }
 .right-echarts {
   transform: translateX(-2px);
+}
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #282828;
+  height: 228px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 </style>
