@@ -19,7 +19,7 @@
         </div>
         <a-divider type="vertical" class="divider"/>
         <div class="info-content">
-          <span class="title-css">按月上报</span>
+          <span class="title-css">{{ frequency }}</span>
           <span class="content-css basic-content" style="padding-top: 20px">上报频率</span>
         </div>
       </div>
@@ -43,9 +43,13 @@
     content: {
       type: String,
       default: '',
+    },
+    frequency: {
+      type: String,
+      default: '',
     }
   })
-  const { title, content } = toRefs(props);
+  const { title, content,frequency } = toRefs(props);
 </script>
 
 <style scoped lang="less">
