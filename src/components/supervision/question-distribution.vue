@@ -85,7 +85,7 @@ const initEcharts = () => {
     option.value.radar.indicator = list;
     option.value.series[0].data[0].value = valueData;
     questionList.value = reportData.value;
-    let num = 8 - questionList.value.length;
+    let num = 7 - questionList.value.length;
     if (num > 0) {
       for (let i = 0; i < num; i++) {
         questionList.value.push({

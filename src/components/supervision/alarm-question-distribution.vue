@@ -94,7 +94,7 @@ const initEcharts = () => {
     option.value.yAxis.data = list;
     option.value.series[0].data = valueData;
     questionList.value = reportData.value;
-    let num = 8 - questionList.value.length;
+    let num = 7 - questionList.value.length;
     if (num > 0) {
       for (let i = 0; i < num; i++) {
         questionList.value.push({
