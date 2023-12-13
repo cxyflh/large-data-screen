@@ -137,10 +137,10 @@ const initEcharts = () => {
         </div>
         <div>
           <div class="list-title list-item">
-            <span class="tag">不通过线索标签</span>
+            <span class="tag">警告线索标签</span>
             <span class="tag-num">总数</span>
-            <span class="tag-num">已整改</span>
-            <span class="tag-num">待整改</span>
+            <span class="tag-num">已阅</span>
+            <span class="tag-num">待阅</span>
           </div>
           <div class="list-main">
             <div class="list-item" v-for="(item, index) in questionList" :key="index">
