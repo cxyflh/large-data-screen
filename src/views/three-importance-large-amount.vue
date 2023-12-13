@@ -95,8 +95,8 @@ onMounted(() => {
   .largeScreenContainer {
     width: 1920px;
     //height: 1080px;
-    overflow: scroll;
-    padding-bottom: 20px;
+    // overflow: scroll;
+    // padding-bottom: 20px;
   }
 }
   .lineTwo {

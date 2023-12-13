@@ -87,7 +87,7 @@ const frequency = ref('按月上报')
   .largeScreenContainer {
     width: 1920px;
     //height: 1080px;
-    overflow: scroll;
+    // overflow: scroll;
   }
 }
 .main-content {
