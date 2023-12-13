@@ -16,8 +16,8 @@
           <img src="../assets/icon/subtract.svg"/>
       </a-button>
       </a-dropdown> -->
-      <a-button class="button" @click="router.push('/')" v-if="detailMonth && buttonShow">校验平台</a-button>
-      <a-button class="button" @click="router.push('/')" v-if="detailMonth">返回</a-button>
+      <a-button class="button" @click="toPlatform" v-if="detailMonth && buttonShow">校验平台</a-button>
+      <a-button class="button" @click="back" v-if="detailMonth">返回</a-button>
       <a-select v-if="detailMonth"
         v-model:value="params.monthValue"
         :options="monthOptions"
@@ -145,6 +145,18 @@
   const buttonShow = computed(() => {
     return router.currentRoute.value.path === '/supervision-report'
   })
+
+  const toPlatform = () => {
+    window.location.href = 'https://crasys.crdigital.com.cn/#/home?fromBigScree=Y'
+  }
+  const back = () => {
+    router.push({
+      path: '/',
+      query: {
+        ...router.currentRoute.value.query
+      }
+    })
+  }
   
   const onChange = () => {
     //console.log(router,routes)

@@ -124,6 +124,9 @@ const option = ref({
 var echartsDom = ref();
 const initEcharts = () => {
   const myChart = echarts.init(echartsDom.value, 'default');
+  window.addEventListener('resize', function () {
+    myChart.resize();
+  })
   option.value && myChart.setOption(option.value);
 };
 </script>
