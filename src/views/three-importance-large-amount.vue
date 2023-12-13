@@ -1,6 +1,6 @@
 <template>
     <div class="largeScreenContainer">
-    <huarun-header title="三重一大月报" :detailMonth="true" @getData="getSZYDData" :monthEntityList="monthEntityList" @getMonth="getMonth"/>
+    <huarun-header title="三重一大月报" :detailMonth="true" @getData="getSZYDData" @getMonth="getMonth"/>
     <div :key="renderKey" class="column-flex">
       <main-header :title="headerTitle" :content="content" :frequency="frequency"/>
       <div class="row-flex lineTwo">
@@ -44,7 +44,6 @@ const szydLineEcharts = ref({
 const unReportList = ref([])
 const decisionList = ref([])
 const largeFunds = ref({})
-const monthEntityList = ref([])
 const renderKey = ref()
 const month = ref();
 // const query = ref({
@@ -65,7 +64,6 @@ const getSZYDData = (params) => {
         szydLineEcharts.value = res.data.szydLineEcharts;
         unReportList.value = res.data.unReportList;
         decisionList.value = res.data.decisionList;
-        monthEntityList.value = res.data.monthEntityList;
         largeFunds.value = res.data.largeFunds;
         renderKey.value = Math.random()
       }

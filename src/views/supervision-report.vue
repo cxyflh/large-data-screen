@@ -30,12 +30,10 @@ const dataInit = (params) => {
     if (res.code === 200) {
       console.log('res.data', res.data)
       procurementSupervisionData.value = res.data;
-      monthEntityList.value = res.data.monthEntityList;
       renderKey.value = Math.random();
     }
   })
 }
-const monthEntityList = ref([])
 const month = ref();
 const getMonth = (monthValue) => {
   month.value = monthValue;
@@ -47,7 +45,7 @@ const frequency = ref('按月上报')
 
 <template>
   <div class="largeScreenContainer">
-    <huarun-header title="采购监管月报" :detailMonth="true" @getData="dataInit" :monthEntityList="monthEntityList" @getMonth="getMonth"/>
+    <huarun-header title="采购监管月报" :detailMonth="true" @getData="dataInit" @getMonth="getMonth"/>
     <div :key="renderKey" class="column-flex">
       <mainHeader :title="title" :content="content" :frequency="frequency"/>
       <div class="row-flex lineTwo">

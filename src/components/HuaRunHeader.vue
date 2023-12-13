@@ -47,7 +47,7 @@
 <script setup>
   import { ref, defineProps, toRefs, onMounted, defineEmits, computed } from 'vue'
   import logo from '@/components/icons/LogoSvg.vue'
-  import { getBuList } from '../api/dashboard';
+  import { getBuList, getmonthList } from '../api/dashboard';
   import router, { routes } from '../router';
 
   const props = defineProps({
@@ -81,18 +81,6 @@
     value: 'buCode',
   }
   const buOptions = ref([]);
-  const monthOptions = computed(() => {
-    const list = props.monthEntityList.map(item => {
-      let label = item.month + '月'
-      return {
-        label,
-        value: item.month,
-        disabled: !item.check,
-    }
-    })
-    //console.log(list)
-    return list;
-  });
   const buName = ref();
   const getBuListData = () => {
     getBuList({buCode: params.value.buValue[0], ldap: query.ldap}).then(res => {
@@ -116,26 +104,27 @@
       }
     }
   }
-  const handleMonthCascader = () => {
-    // if(detailMonth.value === true){
-    //   if(monthEntityList.value !== null && monthEntityList.value.length > 0) {
-    //     for(let i = 0; i < monthEntityList.value.length; i++) {
-    //       monthOptions.value[i] = {
-    //         label: `${monthEntityList.value[i].month}月`,
-    //         value: monthEntityList.value[i].month,
-    //         disabled: !monthEntityList.value[i].check
-    //       }
-    //     }
-    //   }
-    //   // else{
-    //   //   for(let i = 0; i < 12; i++) {
-    //   //     monthOptions.value[i] = {
-    //   //       label: `${i+1}月`,
-    //   //       value: i+1,
-    //   //     }
-    //   //   }
-    //   // }
-    // }
+  const monthOptions = ref([]);
+  const handleMonth = () => {
+    const $router = router.currentRoute.value
+    if ($router.path === '/supervision-report' || $router.path === '/SZYD') {
+      let params = {
+        buCode: $router.query.buCode,
+        type: $router.path === '/supervision-report' ? 1 : 2,
+      }
+      getmonthList(params).then(res => {
+        if (res.code === 200) {
+          monthOptions.value = res.data.map(item => {
+            let label = item.month + '月'
+            return {
+              label,
+              value: item.month,
+              disabled: !item.check,
+            }
+          })
+        }
+      })
+    }
   }
 
   const buttonShow = computed(() => {
@@ -166,7 +155,7 @@
     });
   }
   onMounted(() => {
-    handleMonthCascader();
+    handleMonth();
     getBuListData();
     emit('getMonth',params.value.monthValue);
   })

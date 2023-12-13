@@ -21,3 +21,8 @@ export const getSZYD = (params) => {
 export const getBuList = (params) => {
   return request.get(baseUrl + '/bu-list', { params })
 }
+
+/** 获取可选月份下拉框 */
+export const getmonthList = (params) => {
+  return request.get(baseUrl + '/get-month', { params })
+}
