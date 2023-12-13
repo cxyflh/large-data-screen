@@ -104,7 +104,7 @@ onMounted(() => {
 }
   .lineTwo {
     width: 100%;
-    height: 495px;
+    height: 497px;
   .lineTwo-div1 {
     height: 100%;
     flex: 1;
@@ -124,7 +124,7 @@ onMounted(() => {
 
 .lineThree {
   width: 100%;
-  height: 242px;
+  height: 244px;
   .lineThree-div1 {
     //min-width: 1365px;
     height: 100%;
