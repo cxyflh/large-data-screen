@@ -94,14 +94,17 @@ onMounted(() => {
 @media screen and (width < 1920px) {
   .largeScreenContainer {
     width: 1920px;
-    //height: 1080px;
+    min-height: 1080px;
     // overflow: scroll;
     // padding-bottom: 20px;
   }
 }
+.largeScreenContainer {
+  padding-bottom: 40px;
+}
   .lineTwo {
     width: 100%;
-    height: 435px;
+    height: 495px;
   .lineTwo-div1 {
     height: 100%;
     flex: 1;
@@ -121,7 +124,7 @@ onMounted(() => {
 
 .lineThree {
   width: 100%;
-  height: 222px;
+  height: 242px;
   .lineThree-div1 {
     //min-width: 1365px;
     height: 100%;

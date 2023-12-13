@@ -12,7 +12,11 @@
 
 <style lang="less" scoped>
 .picturePosition {
+  position: relative;
+  width: 100%;
   img {
+    width: 100%;
+    padding: 0 20px;
     margin-bottom: 16px;
   }
 }

@@ -86,8 +86,8 @@ const frequency = ref('按月上报')
 @media screen and (width < 1920px) {
   .largeScreenContainer {
     width: 1920px;
-    //height: 1080px;
-    // overflow: scroll;
+    min-height: 1080px;
+    //overflow: scroll;
   }
 }
 .main-content {

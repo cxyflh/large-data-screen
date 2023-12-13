@@ -11,10 +11,17 @@
 <style scoped lang="less">
 .report-main {
   width: 100%;
-  height: 100%;
+  min-height: 1080px;
   background-size: 100% 100%;
   background-image: url("../assets/icon/score.png");
   position: relative;
+}
+@media screen and (width < 1920px) {
+  .report-main {
+    width: 1920px;
+    min-height: 1080px;
+    // overflow: scroll;
+  }
 }
 .demo {
   position: absolute;

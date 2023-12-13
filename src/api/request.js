@@ -22,11 +22,9 @@ const errorHandler = error => {
         } = error.response;
         // 403 无权限
         if (status === 403) {
-            window.open('')
-            notification.error({
-                message: 'Forbidden',
-                description: data && data.message || statusText,
-            });
+          setTimeout(() => {
+            window.location.href = 'https://crasys.crdigital.com.cn/#/home?fromBigScree=Y'
+          }, 500)
         }
         // 401 未登录/未授权
         if (status === 401 && data.result && data.result.isLogin) {

@@ -143,7 +143,7 @@
 }
   .main-content {
     flex-grow: 1;
-    padding: 20px 40px;
+    padding: 40px;
     display: flex;
     gap: 30px;
   }
