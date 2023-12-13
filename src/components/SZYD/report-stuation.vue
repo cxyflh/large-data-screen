@@ -158,7 +158,7 @@ const initEcharts = () => {
 }
 .echarts-dom {
   width: 100%;
-  height: 300px;
+  height: 360px;
   position: relative;
 }
 .target-item {
