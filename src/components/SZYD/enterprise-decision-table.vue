@@ -43,8 +43,8 @@ const empty = {
 const initList = () => {
   let result = decisionList.value;
   const length = result.length;
-  if(length < 7){
-    for(let i = 0; i < 7 - length; i++){
+  if(length < 8){
+    for(let i = 0; i < 8 - length; i++){
       result.push(empty);
     }
   }

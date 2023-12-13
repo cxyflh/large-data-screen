@@ -33,8 +33,8 @@ const empty = {
 const initList = () => {
   let result = unReportList.value;
   const length = result.length;
-  if(length < 11){
-    for(let i = 0; i < 11 - length; i++){
+  if(length < 13){
+    for(let i = 0; i < 13 - length; i++){
       result.push(empty);
     }
   }

@@ -16,9 +16,9 @@ const year = ref();
 const option = ref({
   grid: {
     top: '30px',
-    left: '10px',
+    left: '20px',
     right: '30px',
-    bottom: 0,
+    bottom: '20px',
     containLabel: true
   },
   tooltip: {

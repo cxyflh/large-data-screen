@@ -85,7 +85,7 @@ const content = ref('华润集团国资监管创新应用平台，汇聚全集�
 @media screen and (width < 1920px) {
   .largeScreenContainer {
     width: 1920px;
-    //height: 1080px;
+    min-height: 1080px;
     overflow: scroll;
   }
 }
