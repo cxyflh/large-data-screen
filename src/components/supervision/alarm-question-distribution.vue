@@ -50,8 +50,7 @@ const option = ref({
       //设置字数限制
       formatter: function(value) {
         if (value.length > 6) {
-          // return value.substring(0, 6) + '\n' + value.substring(6);
-          return value.substring(0, 6);
+          return value.substring(0, 6) + '...';
         } else {
           return value;
         }

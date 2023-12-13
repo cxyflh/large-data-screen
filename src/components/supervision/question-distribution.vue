@@ -73,7 +73,7 @@ const initEcharts = () => {
     let unCorrectedTotal = 0
     reportData.value.map(item => {
       list.push({
-        max: item.count,
+        max: reportData.value[0].count,
         name: item.content,
       });
       valueData.push(item.count);
