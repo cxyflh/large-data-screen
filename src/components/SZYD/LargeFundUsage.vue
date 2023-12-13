@@ -34,9 +34,9 @@ const fundList = ref([
   }
 ]);
 const resData = {
-  fundsAmount: '100',
-  largeFundsAmount: '100',
-  payLargeFundsAmount: '10',
+  fundsAmount: '',
+  largeFundsAmount: '',
+  payLargeFundsAmount: '',
 }
 const list = [
   {
